@@ -73,7 +73,7 @@ app.post("/insert", async (req, res) => {
 app.get("/data", async (req, res) => {
     try{
         const getData = await myData.find(req.query);
-        res.send(getData);
+        res.status(200).send(getData);
     }catch(err){
         console.log(err);
     }
