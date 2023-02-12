@@ -1,6 +1,7 @@
 const express  = require("express");
 const app = express();
-const BodyParser = require("body-parser")
+const BodyParser = require("body-parser");
+const cors = require("cors");
 const port = process.env.PORT || 3000;
 const mongoose = require("mongoose");
 const url = `mongodb+srv://test:root@cluster0.bhlqwzf.mongodb.net/API?retryWrites=true&w=majority`;
