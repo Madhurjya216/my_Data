@@ -3,9 +3,10 @@ const app = express();
 const BodyParser = require("body-parser")
 const port = process.env.PORT || 3000;
 const mongoose = require("mongoose");
-const url = `mongodb+srv://test:root@cluster0.bhlqwzf.mongodb.net/API?retryWrites=true&w=majority`
+const url = `mongodb+srv://test:root@cluster0.bhlqwzf.mongodb.net/API?retryWrites=true&w=majority`;
 
 // middlewares
+app.use(cors());
 app.use(express.json());
 app.use(BodyParser.urlencoded({extended: true}));
 
@@ -82,7 +83,7 @@ app.get("/data", async (req, res) => {
 
 
 
-
+// Listening the server
 app.listen(port, () => {
     console.log(`Server is started at:${port}`);
 })
